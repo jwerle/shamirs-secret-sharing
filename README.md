@@ -10,7 +10,7 @@ Much of what you see in this module has been ported from or
 directly influenced by
 [secrets.js](https://github.com/grempe/secrets.js),
 [c-sss](https://github.com/fletcher/c-sss), and
-[libgdshare](https://launchpad.net/libgfshare)
+[libgfshare](https://launchpad.net/libgfshare)
 
 ## Installation
 
