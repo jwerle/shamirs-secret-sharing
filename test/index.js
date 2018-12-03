@@ -1,5 +1,4 @@
 const { split, combine } = require('../')
-const isBuffer = require('is-buffer')
 const codec = require('../codec')
 const test = require('ava')
 
@@ -77,7 +76,7 @@ test('split(secret, opts) simple with string', (t) => {
 
   t.true(Array.isArray(shares))
   t.true(n === shares.length)
-  t.true(shares.every(isBuffer))
+  t.true(shares.every(Buffer.isBuffer))
 })
 
 test('split(secret, opts) simple with buffer', (t) => {
@@ -88,7 +87,7 @@ test('split(secret, opts) simple with buffer', (t) => {
 
   t.true(Array.isArray(shares))
   t.true(n === shares.length)
-  t.true(shares.every(isBuffer))
+  t.true(shares.every(Buffer.isBuffer))
 })
 
 test('combine(shares) simple buffers', (t) => {

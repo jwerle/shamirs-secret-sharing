@@ -1,10 +1,9 @@
 const { BIT_COUNT, BIT_SIZE } = require('./constants')
-const isBuffer = require('is-buffer')
 
 function parse(input) {
   const share = { id: null, bits: null, data: null }
 
-  if (isBuffer(input)) {
+  if (Buffer.isBuffer(input)) {
     input = input.toString('hex')
   }
 

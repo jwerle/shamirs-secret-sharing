@@ -1,4 +1,4 @@
-const randomBytes = require('randombytes')
+const { randomBytes } = require('crypto')
 
 function random(size) {
   const r = randomBytes(32 + size)

@@ -2,7 +2,6 @@ const { lagrange } = require('./lagrange')
 const { horner } = require('./horner')
 const { points } = require('./points')
 const { random } = require('./random')
-const isBuffer = require('is-buffer')
 const codec = require('./codec')
 
 const {
@@ -38,7 +37,7 @@ function split(secret, opts) {
     secret = Buffer.from(secret)
   }
 
-  if (false === isBuffer(secret)) {
+  if (false === Buffer.isBuffer(secret)) {
     throw new TypeError('Expecting secret to be a buffer.')
   }
 

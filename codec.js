@@ -1,5 +1,4 @@
 const { zeroes } = require('./table')
-const isBuffer = require('is-buffer')
 
 const {
   BYTES_PER_CHARACTER,
@@ -41,7 +40,7 @@ function hex(buffer, encoding) {
     return fromString()
   }
 
-  if (isBuffer(buffer)) {
+  if (Buffer.isBuffer(buffer)) {
     return fromBuffer()
   }
 
@@ -92,7 +91,7 @@ function bin(buffer, radix) {
   for (let i = buffer.length - 1; i >= 0; --i) {
     let chunk = null
 
-    if (isBuffer(buffer)) {
+    if (Buffer.isBuffer(buffer)) {
       chunk = buffer[i]
     }
 
@@ -127,7 +126,7 @@ function encode(id, data) {
     Buffer.from(pad(id.toString(16), padding))
   ])
 
-  if (false === isBuffer(data)) {
+  if (false === Buffer.isBuffer(data)) {
     data = Buffer.from(data)
   }
 
@@ -139,7 +138,7 @@ function decode(buffer, encoding) {
   const offset = padding
   const chunks = []
 
-  if (isBuffer(buffer)) {
+  if (Buffer.isBuffer(buffer)) {
     buffer = buffer.toString(encoding)
   }
 
@@ -158,7 +157,7 @@ function split(string, padding, radix) {
   const chunks = []
   let i = 0
 
-  if (isBuffer(string)) {
+  if (Buffer.isBuffer(string)) {
     string = string.toString()
   }
 

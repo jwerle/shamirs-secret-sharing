@@ -17,10 +17,7 @@
   ],
   "author": "Joseph Werle <joseph.werle@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "is-buffer": "^2.0.3",
-    "randombytes": "^2.0.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "ava": "^0.25.0",
     "nyc": "^12.0.2"
