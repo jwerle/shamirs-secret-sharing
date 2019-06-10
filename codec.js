@@ -146,11 +146,11 @@ function decode(buffer, encoding) {
 
   for (let i = 0; i < buffer.length; i += offset) {
     const bits = buffer.slice(i, i + offset)
-    const chunk = String.fromCharCode(parseInt(bits, 16))
+    const chunk = parseInt(bits, 16)
     chunks.unshift(chunk)
   }
 
-  return Buffer.from(chunks.join(''))
+  return Buffer.from(chunks)
 }
 
 function split(string, padding, radix) {
