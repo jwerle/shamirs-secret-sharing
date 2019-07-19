@@ -64,6 +64,7 @@ secret for the given shares.
 * https://en.wikipedia.org/wiki/Lagrange_polynomial
 * https://en.wikipedia.org/wiki/Horner%27s_method
 * https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+* https://codesandbox.io/s/shamirs-secret-sharing-pcsbk
 
 ## License
 
