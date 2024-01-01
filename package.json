@@ -1,13 +1,21 @@
 {
   "name": "shamirs-secret-sharing",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A simple implementation of Shamir's Secret Sharing configured to use a finite field in GF(2^8) with 128 bit padding",
   "main": "index.js",
+  "type": "module",
+  "exports": {
+    "import": "./index.js",
+    "require": "./module.cjs"
+  },
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "ava test"
+    "test": "npm run test:node",
+    "test:node": "cd test && node --test --test-reporter tap runtimes/node.js",
+    "test:socket": "cd test && ssc build --headless -r -o",
+    "generate:commonjs": "rm -f module.cjs && esbuild index.js --bundle --format=cjs > module.cjs"
   },
   "keywords": [
     "shamir",
@@ -18,10 +26,7 @@
   "author": "Joseph Werle <joseph.werle@gmail.com>",
   "license": "MIT",
   "dependencies": {},
-  "devDependencies": {
-    "ava": "^0.25.0",
-    "nyc": "^12.0.2"
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jwerle/shamirs-secret-sharing.git"

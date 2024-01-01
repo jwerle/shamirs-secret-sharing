@@ -18,14 +18,30 @@ directly influenced by
 $ npm install shamirs-secret-sharing
 ```
 
-## Example Usage
+## Example Usage (Node.js)
 
 ```js
-const sss = require('shamirs-secret-sharing')
+import sss from 'shamirs-secret-sharing'
+
 const secret = Buffer.from('secret key')
 const shares = sss.split(secret, { shares: 10, threshold: 4 })
 const recovered = sss.combine(shares.slice(3, 7))
+
 console.log(recovered.toString()) // 'secret key'
+```
+
+## Example Usage ([Socket Runtime](https://github.com/socketsupply/socket))
+
+Configure the `[build.copy-map]` section in `socket.ini`:
+
+```ini
+[build.copy-map]
+node_modules/shamirs-secret-sharing = shares-secret-sharing
+```
+
+```js
+import combine from '/shares-secret-sharing/combine.js'
+import split from '/shares-secret-sharing/split.js'
 ```
 
 ## API

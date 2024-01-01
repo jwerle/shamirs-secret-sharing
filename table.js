@@ -1,12 +1,8 @@
-const {
-  PRIMITIVE_POLYNOMIAL,
-  MAX_SHARES,
-  BIT_SIZE,
-} = require('./constants')
+import { PRIMITIVE_POLYNOMIAL, MAX_SHARES, BIT_SIZE, } from './constants.js'
 
-const zeroes = new Array(4 * BIT_SIZE).join('0')
-const logs = new Array(BIT_SIZE).fill(0)
-const exps = new Array(BIT_SIZE).fill(0)
+export const zeroes = new Array(4 * BIT_SIZE).join('0')
+export const logs = new Array(BIT_SIZE).fill(0)
+export const exps = new Array(BIT_SIZE).fill(0)
 
 for (let i = 0, x = 1; i < BIT_SIZE; ++i) {
   exps[i] = x
@@ -18,8 +14,8 @@ for (let i = 0, x = 1; i < BIT_SIZE; ++i) {
   }
 }
 
-module.exports = {
-  zeroes,
-  logs,
+export default {
   exps,
+  logs,
+  zeroes
 }

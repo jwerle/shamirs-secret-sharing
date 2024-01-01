@@ -1,7 +1,7 @@
-const { combine } = require('./combine')
-const { split } = require('./split')
+import constants from './constants.js'
+import combine from './combine.js'
+import Buffer from './buffer.js'
+import split from './split.js'
 
-module.exports = {
-  combine,
-  split
-}
+export { Buffer, combine, constants, split }
+export default { Buffer, combine, constants, split }
