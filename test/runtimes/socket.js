@@ -1,7 +1,7 @@
-import Buffer from '../../buffer.js'
-import runner from '../runner.js'
-// @ts-ignore
 import test from 'socket:test'
+import Buffer from 'socket:buffer'
+
+import runner from '../runner.js'
 
 // patch globalThis Buffer
 globalThis.Buffer = Buffer

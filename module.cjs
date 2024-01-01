@@ -25,6 +25,7 @@ var __publicField = (obj, key, value) => {
 var shamirs_secret_sharing_exports = {};
 __export(shamirs_secret_sharing_exports, {
   Buffer: () => buffer_default,
+  VERSION: () => VERSION,
   combine: () => combine_default,
   constants: () => constants_default,
   default: () => shamirs_secret_sharing_default,
@@ -815,4 +816,5 @@ function split2(input, options) {
 var split_default = split2;
 
 // index.js
+var VERSION = "2";
 var shamirs_secret_sharing_default = { Buffer: buffer_default, combine: combine_default, constants: constants_default, split: split_default };
