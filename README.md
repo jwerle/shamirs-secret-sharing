@@ -41,8 +41,8 @@ node_modules/shamirs-secret-sharing = shares-secret-sharing
 
 ```js
 import Buffer form 'socket:buffer'
-import combine from '/shares-secret-sharing/combine.js'
-import split from '/shares-secret-sharing/split.js'
+import combine from 'npm:shares-secret-sharing/combine.js'
+import split from 'npm:shares-secret-sharing/split.js'
 
 const secret = Buffer.from('secret key')
 const shares = sss.split(secret, { shares: 10, threshold: 4 })
