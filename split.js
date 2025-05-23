@@ -133,12 +133,14 @@ export function split (input, options) {
     throw new RangeError(`Threshold must be 0 < threshold <= ${options.shares}.`)
   }
 
-  if (options.random !== null && options.random !== undefined) {
-    throw new TypeError('Expecting random to be a function')
+  options = { ...options }
+
+  if (!('random' in options)) {
+    options.random = Buffer.random
   }
 
   if (typeof options.random !== 'function') {
-    options.random = Buffer.random
+    throw new TypeError('Expecting random to be a function')
   }
 
   const hex = codec.hex(secret)
